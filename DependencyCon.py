@@ -4,8 +4,7 @@ import os
 import sys
 
 def check_npm_package_exists(pkg_name):
-    encoded_name = pkg_name.replace("/", "%2F")
-    resp = requests.get(f"https://registry.npmjs.org/{encoded_name}")
+    resp = requests.get(f"https://registry.npmjs.org/{pkg_name}")
     return resp.status_code == 200
 
 def analyze_package_json(file_path):
